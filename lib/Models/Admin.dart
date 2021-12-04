@@ -1,3 +1,6 @@
+import 'package:sqfentity_gen/sqfentity_gen.dart';
+
+
 class Admin{
   late String _id;
   late String _nom;
