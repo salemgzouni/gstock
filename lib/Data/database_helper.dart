@@ -56,7 +56,7 @@ class DataBaseHelper{
 
     await db.execute('''
       CREATE TABLE membre(
-        id TEXT PRIMARY KEY,
+        id int PRIMARY KEY AUTOINCREMENT,
         nom TEXT,
         prenom TEXT
       )
