@@ -26,6 +26,7 @@ class InputWrapper extends StatelessWidget {
           ),
           InkWell(
             child: Text("Register here",),
+
           ),
           SizedBox(height: 40,),
           Button()

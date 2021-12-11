@@ -3,8 +3,11 @@ class Composant{
   late String _des;
   late String _description;
   late int _qte;
+  late int _famille_comp;
 
-  Composant(this._id, this._des, this._description, this._qte);
+  Composant(this._id, this._des, this._description, this._qte,this._famille_comp);
+
+  int get famille_comp => _famille_comp;
 
   int get qte => _qte;
 
@@ -13,6 +16,10 @@ class Composant{
   String get des => _des;
 
   String get id => _id;
+
+  set famille_comp(int value) {
+    _famille_comp = value;
+  }
 
   set qte(int value) {
     _qte = value;
@@ -34,6 +41,7 @@ class Composant{
     map["des"] = _des;
     map["description"] = _description;
     map["qte"] = _qte;
+    map["famille_comp"]=_famille_comp;
     return map;
   }
   //extract composant object from Map Object
@@ -42,5 +50,6 @@ class Composant{
     this._des = obj['des'];
     this._description = obj['description'];
     this._qte = obj['qte'];
+    this._famille_comp= obj['famille_comp'];
   }
 }

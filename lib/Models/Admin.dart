@@ -1,12 +1,12 @@
-import 'package:sqfentity_gen/sqfentity_gen.dart';
-
-
 class Admin{
   late String _id;
   late String _nom;
   late String _prenom;
   late String _email;
   late String _mdp;
+
+
+  Admin.constructeur();
 
   Admin(this._id, this._nom, this._prenom, this._email, this._mdp);
 
@@ -55,5 +55,6 @@ class Admin{
     this._prenom = obj['prenom'];
     this._email = obj['email'];
     this._mdp= obj['mdp'];
+
   }
 }

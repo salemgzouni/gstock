@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:gstock/Models/Admin.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -8,11 +9,12 @@ class DataBaseHelper{
   DataBaseHelper._privateConstructor();
   static final DataBaseHelperinstance = DataBaseHelper._privateConstructor();
   static Database? _database;
+  final _databaseName='gStock';
   Future<Database> get database async =>_database??=await _initDatabase();
 
   Future<Database> _initDatabase() async{
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String path = join(documentsDirectory.path,'gStock.db');
+    String path = join(documentsDirectory.path,_databaseName);
     return await openDatabase(
       path,
       version: 1,
@@ -44,13 +46,6 @@ class DataBaseHelper{
         qte INTEGER,
         famille_comp,
         FOREIGN KEY(famille_comp) REFERENCES famille(id)
-      )
-     ''');
-    await db.execute('''
-      CREATE TABLE membre(
-        id TEXT PRIMARY KEY,
-        nom TEXT,
-        prenom TEXT
       )
      ''');
   }

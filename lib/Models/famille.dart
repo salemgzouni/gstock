@@ -4,11 +4,8 @@ class Famille{
   late String _id;
   late String _des;
   late String _description;
-  late List<Composant> _listComposants;
 
-  Famille(this._id, this._des, this._description, this._listComposants);
-
-  List<Composant> get listComposants => _listComposants;
+  Famille(this._id, this._des, this._description);
 
   String get description => _description;
 
@@ -17,9 +14,7 @@ class Famille{
   String get id => _id;
 
 
-  set listComposants(List<Composant> value) {
-    _listComposants = value;
-  }
+
 
   set description(String value) {
     _description = value;
@@ -36,7 +31,6 @@ class Famille{
     }
     map["des"] = _des;
     map["description"] = _description;
-    map["listComposants"] = _listComposants;
     return map;
   }
   //extract composant object from Map Object
@@ -44,6 +38,5 @@ class Famille{
     this._id = obj['id'];
     this._des = obj['des'];
     this._description = obj['description'];
-    this._listComposants = obj['listComposants'];
   }
 }
