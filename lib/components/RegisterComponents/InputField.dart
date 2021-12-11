@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:gstock/Data/admin_operations.dart';
+import 'package:gstock/Models/Admin.dart';
+import 'package:gstock/Pages/LoginPage.dart';
+import 'package:flutter/foundation.dart';
 
 
 class InputField extends StatelessWidget {
 
-final myNameController = TextEditingController();
-final myPrenomController = TextEditingController();
-final myEmailController = TextEditingController();
-final myPwdController = TextEditingController();
+final _myNameController = TextEditingController();
+final _myPrenomController = TextEditingController();
+final _myEmailController = TextEditingController();
+final _myPwdController = TextEditingController();
+
+
+AdminOperations adminOperations=AdminOperations();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +27,7 @@ final myPwdController = TextEditingController();
               )
           ),
           child: TextField(
-            controller: myNameController,
+            controller: _myNameController,
             decoration: InputDecoration(
 
                 hintText: "Enter your name",
@@ -37,7 +44,7 @@ final myPwdController = TextEditingController();
               )
           ),
           child: TextField(
-            controller: myPrenomController,
+            controller: _myPrenomController,
             obscureText: true,
             decoration: InputDecoration(
 
@@ -55,7 +62,7 @@ final myPwdController = TextEditingController();
               )
           ),
           child: TextField(
-            controller: myEmailController,
+            controller: _myEmailController,
             decoration: InputDecoration(
                 hintText: "Enter your email",
                 hintStyle:TextStyle(color: Colors.grey),
@@ -71,7 +78,7 @@ final myPwdController = TextEditingController();
               )
           ),
           child: TextField(
-            controller: myPwdController,
+            controller: _myPwdController,
             obscureText: true,
             decoration: InputDecoration(
 
@@ -81,6 +88,25 @@ final myPwdController = TextEditingController();
             ),
           ),
         ),
+       Container(
+    height: 40,
+    margin: EdgeInsets.symmetric(horizontal: 50),
+    decoration: BoxDecoration(
+    color: Colors.cyan[500],
+    borderRadius: BorderRadius.circular(10),
+    ),
+         child: TextButton(
+           onPressed: () {
+              final admin=Admin(
+                _myNameController.text, _myPrenomController.text, _myEmailController.text,_myPwdController.text);
+              adminOperations.createAdmin(admin);
+           },
+           child: Text(
+             'Login',
+             style: TextStyle(color: Colors.white, fontSize: 25),
+           ),
+         ),
+    ),
       ],
     );
   }

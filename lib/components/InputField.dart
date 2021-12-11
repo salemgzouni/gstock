@@ -37,7 +37,8 @@ class InputField extends StatelessWidget {
                 border: InputBorder.none
             ),
           ),
-        )
+        ),
+
       ],
     );
   }

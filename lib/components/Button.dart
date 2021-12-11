@@ -16,8 +16,11 @@ class Button extends StatelessWidget {
           color:Colors.white,
           fontSize: 15,
           fontWeight: FontWeight.bold,
-        ),),
+        ),
+        ),
       ),
+
     );
+
   }
 }
