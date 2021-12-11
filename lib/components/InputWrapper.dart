@@ -21,8 +21,12 @@ class InputWrapper extends StatelessWidget {
           ),
           SizedBox(height: 40,),
           Text(
-            "Forgot Password ? ",
-             style: TextStyle(color: Colors.grey),
+            "You don't have an account ?",
+            style: TextStyle(color: Colors.black45)
+          ),
+          InkWell(
+            child: Text("Register here",),
+
           ),
           SizedBox(height: 40,),
           Button()

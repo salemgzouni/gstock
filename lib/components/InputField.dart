@@ -29,7 +29,9 @@ class InputField extends StatelessWidget {
               )
           ),
           child: TextField(
+            obscureText: true,
             decoration: InputDecoration(
+
                 hintText: "Enter your password",
                 hintStyle:TextStyle(color: Colors.grey),
                 border: InputBorder.none
