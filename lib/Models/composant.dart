@@ -3,11 +3,16 @@ class Composant{
   late String _des;
   late String _description;
   late int _qte;
+<<<<<<< HEAD
   late int _famille_comp;
 
   Composant(this._id, this._des, this._description, this._qte,this._famille_comp);
 
   int get famille_comp => _famille_comp;
+=======
+
+  Composant(this._id, this._des, this._description, this._qte);
+>>>>>>> 55ea0b3 (interface register)
 
   int get qte => _qte;
 
@@ -17,10 +22,13 @@ class Composant{
 
   String get id => _id;
 
+<<<<<<< HEAD
   set famille_comp(int value) {
     _famille_comp = value;
   }
 
+=======
+>>>>>>> 55ea0b3 (interface register)
   set qte(int value) {
     _qte = value;
   }
@@ -41,7 +49,10 @@ class Composant{
     map["des"] = _des;
     map["description"] = _description;
     map["qte"] = _qte;
+<<<<<<< HEAD
     map["famille_comp"]=_famille_comp;
+=======
+>>>>>>> 55ea0b3 (interface register)
     return map;
   }
   //extract composant object from Map Object
@@ -50,6 +61,9 @@ class Composant{
     this._des = obj['des'];
     this._description = obj['description'];
     this._qte = obj['qte'];
+<<<<<<< HEAD
     this._famille_comp= obj['famille_comp'];
+=======
+>>>>>>> 55ea0b3 (interface register)
   }
 }

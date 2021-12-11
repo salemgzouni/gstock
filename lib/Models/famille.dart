@@ -4,8 +4,16 @@ class Famille{
   late String _id;
   late String _des;
   late String _description;
+<<<<<<< HEAD
 
   Famille(this._id, this._des, this._description);
+=======
+  late List<Composant> _listComposants;
+
+  Famille(this._id, this._des, this._description, this._listComposants);
+
+  List<Composant> get listComposants => _listComposants;
+>>>>>>> 55ea0b3 (interface register)
 
   String get description => _description;
 
@@ -14,7 +22,13 @@ class Famille{
   String get id => _id;
 
 
+<<<<<<< HEAD
 
+=======
+  set listComposants(List<Composant> value) {
+    _listComposants = value;
+  }
+>>>>>>> 55ea0b3 (interface register)
 
   set description(String value) {
     _description = value;
@@ -31,6 +45,10 @@ class Famille{
     }
     map["des"] = _des;
     map["description"] = _description;
+<<<<<<< HEAD
+=======
+    map["listComposants"] = _listComposants;
+>>>>>>> 55ea0b3 (interface register)
     return map;
   }
   //extract composant object from Map Object
@@ -38,5 +56,9 @@ class Famille{
     this._id = obj['id'];
     this._des = obj['des'];
     this._description = obj['description'];
+<<<<<<< HEAD
+=======
+    this._listComposants = obj['listComposants'];
+>>>>>>> 55ea0b3 (interface register)
   }
 }

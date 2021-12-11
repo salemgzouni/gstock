@@ -1,6 +1,9 @@
 import 'dart:io';
 
+<<<<<<< HEAD
 import 'package:gstock/Models/Admin.dart';
+=======
+>>>>>>> 55ea0b3 (interface register)
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -9,12 +12,19 @@ class DataBaseHelper{
   DataBaseHelper._privateConstructor();
   static final DataBaseHelperinstance = DataBaseHelper._privateConstructor();
   static Database? _database;
+<<<<<<< HEAD
   final _databaseName='gStock';
+=======
+>>>>>>> 55ea0b3 (interface register)
   Future<Database> get database async =>_database??=await _initDatabase();
 
   Future<Database> _initDatabase() async{
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
+<<<<<<< HEAD
     String path = join(documentsDirectory.path,_databaseName);
+=======
+    String path = join(documentsDirectory.path,'gStock.db');
+>>>>>>> 55ea0b3 (interface register)
     return await openDatabase(
       path,
       version: 1,
@@ -48,5 +58,15 @@ class DataBaseHelper{
         FOREIGN KEY(famille_comp) REFERENCES famille(id)
       )
      ''');
+<<<<<<< HEAD
+=======
+    await db.execute('''
+      CREATE TABLE membre(
+        id TEXT PRIMARY KEY,
+        nom TEXT,
+        prenom TEXT
+      )
+     ''');
+>>>>>>> 55ea0b3 (interface register)
   }
 }
