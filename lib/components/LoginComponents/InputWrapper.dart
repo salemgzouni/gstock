@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:gstock/Pages/RegisterPage.dart';
 
-
-import 'Button.dart';
 import 'InputField.dart';
 
 class InputWrapper extends StatelessWidget {
@@ -40,7 +38,6 @@ class InputWrapper extends StatelessWidget {
             ),
           ),
           SizedBox(height: 40,),
-          Button()
         ],
       ),
     );

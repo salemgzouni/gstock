@@ -45,7 +45,6 @@ AdminOperations adminOperations=AdminOperations();
           ),
           child: TextField(
             controller: _myPrenomController,
-            obscureText: true,
             decoration: InputDecoration(
 
                 hintText: "Prenom",
@@ -100,10 +99,11 @@ AdminOperations adminOperations=AdminOperations();
               final admin=Admin(
                 _myNameController.text, _myPrenomController.text, _myEmailController.text,_myPwdController.text);
               adminOperations.createAdmin(admin);
+
            },
            child: Text(
-             'Login',
-             style: TextStyle(color: Colors.white, fontSize: 25),
+             'Register',
+             style: TextStyle(color: Colors.white, fontSize: 20),
            ),
          ),
     ),

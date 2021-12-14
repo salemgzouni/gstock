@@ -40,7 +40,7 @@ class DataBaseHelper{
       CREATE TABLE famille(
         id TEXT PRIMARY KEY,
         des TEXT,
-        description TEXT,
+        description TEXT
       )
      ''');
     await db.execute('''
@@ -51,14 +51,6 @@ class DataBaseHelper{
         qte INTEGER,
         famille_comp,
         FOREIGN KEY(famille_comp) REFERENCES famille(id)
-      )
-     ''');
-
-    await db.execute('''
-      CREATE TABLE membre(
-        id int PRIMARY KEY AUTOINCREMENT,
-        nom TEXT,
-        prenom TEXT
       )
      ''');
 
