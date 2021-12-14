@@ -30,12 +30,17 @@ class AdminOperations {
     return admins;
   }
 
-  Future<List<Admin>> searchAdminById(String id) async {
+  Future<bool> searchAdminByEmailMdp(String email,String mdp) async {
     final db = await dbProvider.database;
-    List<Map<String, dynamic>> allRows = await db
-        .query('admin', where: 'id=?', whereArgs: ['%id%']);
-    List<Admin> admin =allRows.map((admin) => Admin.map(admin)).toList();
-    return admin;
+    List<Map<String, dynamic>> maps = await db
+        .query('admin', where: 'email=? and mdp=?', whereArgs: [email,mdp]);
+    /*List<Admin> admin =allRows.map((admin) => Admin.map(admin)).toList();*/
+    if(maps.isNotEmpty){
+      print(maps);
+      return true;
+    }else{
+      return false;
+    }
   }
 }
 
