@@ -1,6 +1,8 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
 
+import 'ProfilePage.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,7 +23,9 @@ class _HomePageState extends State<HomePage> {
               color: Colors.blue, borderRadius: BorderRadius.circular(10)),
           child: TextButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
             },
             child: const Text(
               'Welcome',
