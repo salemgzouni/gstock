@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gstock/components/ProfileComponents/Header.dart';
 import 'package:gstock/components/ProfileComponents/InputWrapper.dart';
 import '';
+import 'home_page.dart';
 class ProfilePage extends StatelessWidget {
   bool isObscurePassword = true;
 
@@ -9,13 +10,15 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Voici votre profile'),
+        title: Text('Profile'),
         leading : IconButton(
           icon: Icon (
             Icons.arrow_back,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
+          },
         ),
         actions:[
           IconButton(onPressed: () {}, icon: Icon(Icons.settings, color: Colors.white))

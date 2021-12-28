@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gstock/Pages/home_page.dart';
 
 
 import 'Pages/LoginPage.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: HomePage(),
 
     );
 

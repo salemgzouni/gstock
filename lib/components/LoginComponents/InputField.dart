@@ -54,8 +54,8 @@ class InputField extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
-            onPressed: () {
-              if(adminOperations.searchAdminByEmailMdp(_myEmailController.text,_myPwdController.text)==true){
+            onPressed: () async {
+              if(await adminOperations.searchAdminByEmailMdp(_myEmailController.text,_myPwdController.text)==true){
                 Navigator.push(
                   context,MaterialPageRoute(builder: (context) => HomePage()),
                 );
