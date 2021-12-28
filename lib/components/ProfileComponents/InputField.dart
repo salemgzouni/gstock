@@ -43,6 +43,7 @@ class InputField extends StatelessWidget {
                   bottom: BorderSide(color: Colors.grey)
               )
           ),
+
           child: TextField(
             controller: _myPrenomController,
             decoration: InputDecoration(

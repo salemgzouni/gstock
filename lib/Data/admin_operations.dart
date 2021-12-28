@@ -32,8 +32,7 @@ class AdminOperations {
 
   Future<bool> searchAdminByEmailMdp(String email,String mdp) async {
     final db = await dbProvider.database;
-    List<Map<String, dynamic>> maps = await db
-        .query('admin', where: 'email=? and mdp=?', whereArgs: [email,mdp]);
+    Map<String, dynamic> maps = (await db.query('admin', where: 'email=? and mdp=?', whereArgs: [email,mdp])) as Map<String, dynamic>;
     /*List<Admin> admin =allRows.map((admin) => Admin.map(admin)).toList();*/
     if(maps.isNotEmpty){
       print(maps);
