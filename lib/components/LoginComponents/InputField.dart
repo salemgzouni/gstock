@@ -58,9 +58,8 @@ class InputField extends StatelessWidget {
           child: TextButton(
             onPressed: () async {
               if(await adminOperations.searchAdminByEmailMdp(_myEmailController.text,_myPwdController.text)==true){
-                Future<List<Map<String, dynamic>>> loggedAdmin = (await adminOperations.searchAdmin(_myEmailController.text)) as Future<List<Map<String, dynamic>>>;
                 Navigator.push(
-                  context,MaterialPageRoute(builder: (context) => ProfilePage(admin:loggedAdmin,)),
+                  context,MaterialPageRoute(builder: (context) => ProfilePage()),
                 );
               }else{
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
