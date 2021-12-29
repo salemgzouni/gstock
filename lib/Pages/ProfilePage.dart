@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:gstock/Data/admin_operations.dart';
+import 'package:gstock/Models/Admin.dart';
 import 'package:gstock/components/ProfileComponents/Header.dart';
 import 'package:gstock/components/ProfileComponents/InputWrapper.dart';
 import '';
 import 'home_page.dart';
 class ProfilePage extends StatelessWidget {
   bool isObscurePassword = true;
+  AdminOperations adminOperations=new AdminOperations();
+  Future<List<Map<String,dynamic>>> admin;
+  ProfilePage({required this.admin});
 
   @override
   Widget build(BuildContext context) {
+    final adminData= Admin.map(admin);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
@@ -81,9 +88,9 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 30),
-                buildTextField("Full name","Demon",false),
-                buildTextField("Email", "email@gmail.com", false),
-                buildTextField("Password", "******", true),
+                buildTextField("Full name",adminData.prenom,false),
+                buildTextField("Email", adminData.email, false),
+                buildTextField("Password", adminData.mdp, true),
                 SizedBox(height:30),
                 Row (
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

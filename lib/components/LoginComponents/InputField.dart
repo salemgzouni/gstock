@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/admin_operations.dart';
+import 'package:gstock/Models/Admin.dart';
+import 'package:gstock/Pages/ProfilePage.dart';
 import 'package:gstock/Pages/home_page.dart';
 
 class InputField extends StatelessWidget {
@@ -7,7 +9,7 @@ class InputField extends StatelessWidget {
   final _myEmailController = TextEditingController();
   final _myPwdController = TextEditingController();
 
-  AdminOperations adminOperations=AdminOperations();
+  AdminOperations adminOperations=new AdminOperations();
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +58,9 @@ class InputField extends StatelessWidget {
           child: TextButton(
             onPressed: () async {
               if(await adminOperations.searchAdminByEmailMdp(_myEmailController.text,_myPwdController.text)==true){
+                Future<List<Map<String, dynamic>>> loggedAdmin = (await adminOperations.searchAdmin(_myEmailController.text)) as Future<List<Map<String, dynamic>>>;
                 Navigator.push(
-                  context,MaterialPageRoute(builder: (context) => HomePage()),
+                  context,MaterialPageRoute(builder: (context) => ProfilePage(admin:loggedAdmin,)),
                 );
               }else{
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(

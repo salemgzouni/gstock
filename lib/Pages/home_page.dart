@@ -1,4 +1,3 @@
-// TODO Implement this library.
 import 'package:flutter/material.dart';
 
 import 'ProfilePage.dart';
@@ -6,20 +5,19 @@ import 'ProfilePage.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
+  HomePage();
 }
 
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       appBar: AppBar(
           title: Text("HomePage"),
           automaticallyImplyLeading: true,
       ),
       body: Center(
-          child:  Text("Welcome, select a family please.")
+          child:  Text("Welcome, select a family please."),
       ),
       drawer: Drawer(
         child: ListView(

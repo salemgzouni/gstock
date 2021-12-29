@@ -22,7 +22,7 @@ class FamilleOperations {
     await db.delete('famille', where: 'id=?', whereArgs: [famille.id]);
   }
 
-  Future <List<Famille>> getAllFamills() async {
+  Future <List<Famille>> getAllFamilles() async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db.query('famille');
     List<Famille> familles =
