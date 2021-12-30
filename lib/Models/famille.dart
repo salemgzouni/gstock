@@ -22,9 +22,6 @@ class Famille{
   String get id => _id;
 
 
-
-
-
   set listComposants(List<Composant> value) {
     _listComposants = value;
   }
@@ -50,6 +47,7 @@ class Famille{
 
     return map;
   }
+
   //extract composant object from Map Object
   Famille.map(dynamic obj) {
     this._id = obj['id'];
@@ -59,4 +57,6 @@ class Famille{
     this._listComposants = obj['listComposants'];
 
   }
+
+
 }

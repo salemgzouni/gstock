@@ -1,7 +1,7 @@
 import 'package:gstock/Data/database_helper.dart';
 import 'package:gstock/Models/famille.dart';
 class FamilleOperations {
-  late FamilleOperations adminOperations;
+  late FamilleOperations familleOperations;
 
   final dbProvider = DataBaseHelper.DataBaseHelperinstance;
 
@@ -37,7 +37,12 @@ class FamilleOperations {
     List<Famille> famille =allRows.map((famille) => Famille.map(famille)).toList();
     return famille;
   }
+
+
+
 }
+
+
 
 //WHERE name LIKE 'keyword%'
 //--Finds any values that start with "keyword"
