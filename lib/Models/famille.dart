@@ -34,7 +34,7 @@ class Famille{
   set des(String value) {
     _des = value;
   }
-  //convert composant Object to Map Object
+  //convert famille Object to Map Object
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
     if(id!=null){
