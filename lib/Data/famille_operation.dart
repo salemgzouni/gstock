@@ -11,7 +11,7 @@ class FamilleOperations {
   createFamille(Famille famille) async {
     final db = await dbProvider.database;
     db.insert('famille', famille.toMap());
-    print('famille inserted');
+    print(famille.id);
   }
 
   updateFamille(Famille famille) async {
