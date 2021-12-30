@@ -1,29 +1,29 @@
 class Composant{
-  late String _id;
+  late int _id;
   late String _des;
   late String _description;
-  late int _qte;
+  late String _qte;
 
   late int _famille_comp;
 
-  Composant(this._id, this._des, this._description, this._qte,this._famille_comp);
+  Composant(this._des, this._description, this._qte);
 
   int get famille_comp => _famille_comp;
 
 
-  int get qte => _qte;
+  String get qte => _qte;
 
   String get description => _description;
 
   String get des => _des;
 
-  String get id => _id;
+  int get id => _id;
 
   set famille_comp(int value) {
     _famille_comp = value;
   }
 
-  set qte(int value) {
+  set qte(String value) {
     _qte = value;
   }
 
@@ -37,14 +37,12 @@ class Composant{
   //convert composant Object to Map Object
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
-    if(id!=null){
-      map["id"] = _id;
-    }
+
     map["des"] = _des;
     map["description"] = _description;
     map["qte"] = _qte;
 
-    map["famille_comp"]=_famille_comp;
+
 
     return map;
   }

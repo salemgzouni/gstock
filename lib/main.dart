@@ -3,7 +3,7 @@ import 'package:gstock/Pages/FormFamille.dart';
 
 import 'package:gstock/Pages/home_page.dart';
 
-
+import 'Pages/FormComposant.dart';
 import 'Pages/LoginPage.dart';
 import 'Pages/RegisterPage.dart';
 import 'Pages/ProfilePage.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FormFamille(),
+      home:FormComposant(),
 
     );
 

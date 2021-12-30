@@ -1,7 +1,7 @@
 import 'package:gstock/Data/database_helper.dart';
 import 'package:gstock/Models/composant.dart';
-class FamilleOperations {
-  late FamilleOperations adminOperations;
+class ComposantOperations {
+  late ComposantOperations composantOperations;
 
   final dbProvider = DataBaseHelper.DataBaseHelperinstance;
 

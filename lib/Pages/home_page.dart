@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gstock/Data/famille_operation.dart';
 import 'package:gstock/Models/famille.dart';
 import 'package:gstock/Pages/Composant.dart';
+import 'package:gstock/Pages/FormFamille.dart';
 import 'home_page.dart';
 import 'ProfilePage.dart';
 import '';
@@ -40,7 +41,11 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             actions:[
-              IconButton(onPressed: () {}, icon: Icon(Icons.settings, color: Colors.white))
+
+              IconButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => FormFamille()),);
+              }, icon: Icon(Icons.settings, color: Colors.white))
+
             ]
         ),
         body: Container(
