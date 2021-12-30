@@ -2,7 +2,7 @@ class Composant{
   late int _id;
   late String _des;
   late String _description;
-  late String _qte;
+  late int _qte;
 
   late int _famille_comp;
 
@@ -11,7 +11,7 @@ class Composant{
   int get famille_comp => _famille_comp;
 
 
-  String get qte => _qte;
+  int get qte => _qte;
 
   String get description => _description;
 
@@ -23,7 +23,7 @@ class Composant{
     _famille_comp = value;
   }
 
-  set qte(String value) {
+  set qte(int value) {
     _qte = value;
   }
 

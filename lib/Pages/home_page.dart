@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
       "Here is list 3 subtitle"
     ];
 
+
     return Scaffold(
         appBar: AppBar(
             title: Text('Les familles'),
@@ -56,8 +57,33 @@ class _HomePageState extends State<HomePage> {
                     return ListView.builder(
                         itemCount: familleList.length,
                         itemBuilder: (context, index) {
-                          return Text(familleList[index].des);
+                          return Card(
+                              child: ListTile(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Composant(),
+                                        // Pass the arguments as part of the RouteSettings. The
+                                        // DetailScreen reads the arguments from these settings.
+                                        settings: RouteSettings(
+                                          arguments: familleList[index].id,
+                                        ),
+                                      ),
+                                    );
+
+                                    Scaffold.of(context).showSnackBar(SnackBar(
+                                      content: Text(familleList[index].des + ' pressed!'),
+                                    ));
+                                  },
+                                  title: Text(familleList[index].des),
+                                  subtitle: Text(familleList[index].description),
+                                  leading: CircleAvatar(
+                                      backgroundImage: NetworkImage(
+                                          "https://images.unsplash.com/photo-1547721064-da6cfb341d50")),
+                               ));
                         });
+
                   }
                   else if (!snapshot.hasData){
                     return const Text('empty');

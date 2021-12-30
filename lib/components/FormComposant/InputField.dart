@@ -18,6 +18,7 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: <Widget>[
         Container(
@@ -80,8 +81,9 @@ class InputField extends StatelessWidget {
           ),
           child: TextButton(
             onPressed: () {
+              int n = int.parse(_myQteController.text);
               final composant=Composant(
-                   _myNameController.text, _myDescriptionController.text, _myQteController.text);
+                   _myNameController.text, _myDescriptionController.text, n);
               composantOperations.createCompsant(composant);
 
             },
