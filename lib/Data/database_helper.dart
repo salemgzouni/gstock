@@ -53,6 +53,15 @@ class DataBaseHelper{
         FOREIGN KEY(famille_comp) REFERENCES famille(id)
       )
      ''');
+    await db.execute('''
+      CREATE TABLE emprunt(
+        id integer PRIMARY KEY autoincrement,
+        comp TEXT,
+        nom TEXT,
+        dateDebut TEXT,
+        dateFin TEXT
+      )
+     ''');
 
   }
 }
