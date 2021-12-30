@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/famille_operation.dart';
 import 'package:gstock/Models/famille.dart';
-import 'package:gstock/Pages/Composant.dart';
+
+import 'package:gstock/Pages/ComposantPage.dart';
 import 'package:gstock/Pages/FormFamille.dart';
 import 'home_page.dart';
 import 'ProfilePage.dart';
@@ -21,12 +22,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     FamilleOperations familleOperations= new FamilleOperations();
     //var  allFamilles= familleOperations.getAllFamilles() as List;
-    final titles = ["List 1", "List 2", "List 3"];
-    final subtitles = [
-      "Here is list 1 subtitle",
-      "Here is list 2 subtitle",
-      "Here is list 3 subtitle"
-    ];
 
 
     return Scaffold(
@@ -63,11 +58,12 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Composant(),
+                                        builder: (context) => ComposantPage(),
                                         // Pass the arguments as part of the RouteSettings. The
                                         // DetailScreen reads the arguments from these settings.
                                         settings: RouteSettings(
-                                          arguments: familleList[index].id,
+                                          arguments: familleList[index].des,
+
                                         ),
                                       ),
                                     );

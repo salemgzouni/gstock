@@ -18,6 +18,8 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final des = ModalRoute.of(context)!.settings.arguments as String;
+    print(des);
 
     return Column(
       children: <Widget>[
@@ -83,7 +85,7 @@ class InputField extends StatelessWidget {
             onPressed: () {
               int n = int.parse(_myQteController.text);
               final composant=Composant(
-                   _myNameController.text, _myDescriptionController.text, n);
+                   _myNameController.text, _myDescriptionController.text, n, des);
               composantOperations.createCompsant(composant);
 
             },
