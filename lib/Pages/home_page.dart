@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     FamilleOperations familleOperations= new FamilleOperations();
-    //var  allFamilles= familleOperations.getAllFamilles() as List;
+    Future<List<Famille>> allFamilles= familleOperations.getAllFamilles();
     final titles = ["List 1", "List 2", "List 3"];
     final subtitles = [
       "Here is list 1 subtitle",
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Container(
           child: FutureBuilder(
-            future:familleOperations.getAllFamilles(),
+            future:allFamilles,
             builder:(BuildContext context,AsyncSnapshot<dynamic> snapshot){
             if(snapshot.hasData) {
               final familleList = snapshot.data as List<Famille>;
@@ -54,8 +54,8 @@ class _HomePageState extends State<HomePage> {
                     return Text(familleList[index].des);
                   });
             }
-            else if (!snapshot.hasData){
-              return const Text('monji');
+            else if (snapshot.hasError){
+              return  Text('${snapshot.error}');
             }
             else {
                 return CircularProgressIndicator(); // displays while loading data
