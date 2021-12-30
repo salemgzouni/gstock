@@ -21,7 +21,7 @@ class _ComposantState extends State<Composant> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Categorie'),
+          title: Text('Les Composants'),
           leading : IconButton(
             icon: Icon (
               Icons.arrow_back,
