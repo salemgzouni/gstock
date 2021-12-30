@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                   });
             }
             else if (!snapshot.hasData){
-              return const Text('monji');
+              return const Text('empty');
             }
             else {
                 return CircularProgressIndicator(); // displays while loading data
