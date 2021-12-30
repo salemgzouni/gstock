@@ -45,7 +45,7 @@ class DataBaseHelper{
      ''');
     await db.execute('''
       CREATE TABLE composant(
-        id TEXT PRIMARY KEY,
+        id integer PRIMARY KEY autoincrement,
         des TEXT,
         description TEXT,
         qte INTEGER,
