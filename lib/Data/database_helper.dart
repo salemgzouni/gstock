@@ -38,7 +38,7 @@ class DataBaseHelper{
      ''');
     await db.execute('''
       CREATE TABLE famille(
-        id TEXT PRIMARY KEY,
+       id integer PRIMARY KEY autoincrement,
         des TEXT,
         description TEXT
       )
