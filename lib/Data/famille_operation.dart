@@ -40,6 +40,14 @@ class FamilleOperations {
     return famille;
   }
 
+  Future<List<Famille>> searchFamilleByDes(String des) async {
+    final db = await dbProvider.database;
+    List<Map<String, dynamic>> allRows = await db
+        .query('famille', where: 'des=?', whereArgs: ['%des%']);
+    List<Famille> famille =allRows.map((famille) => Famille.map(famille)).toList();
+    return famille;
+  }
+
 
 }
 
