@@ -41,11 +41,9 @@ class ComposantOperations {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db
         .query('composant', where: 'famille_comp=?', whereArgs: [fam]);
-    List<Composant> composant =allRows.map((composant) => Composant.map(composant)).toList();
+    List<Composant> composant =await allRows.map((composant) => Composant.map(composant)).toList();
     return composant;
   }
-
-
 }
 
 //WHERE name LIKE 'keyword%'

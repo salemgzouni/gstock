@@ -20,7 +20,6 @@ class InputField extends StatelessWidget {
   Widget build(BuildContext context) {
     final des = ModalRoute.of(context)!.settings.arguments as String;
     print(des);
-
     return Column(
       children: <Widget>[
         Container(
