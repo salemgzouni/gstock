@@ -6,13 +6,15 @@ import 'package:gstock/Pages/home_page.dart';
 
 class InputField extends StatelessWidget {
 
-  final _myEmailController = TextEditingController();
-  final _myPwdController = TextEditingController();
+  final _myCompController = TextEditingController();
+  final _myNameController = TextEditingController();
 
-  AdminOperations adminOperations=new AdminOperations();
+
 
   @override
   Widget build(BuildContext context) {
+    final des= ModalRoute.of(context)!.settings.arguments as String;
+    print(des);
     return Column(
       children: <Widget>[
         Container(
@@ -23,10 +25,10 @@ class InputField extends StatelessWidget {
               )
           ),
           child: TextField(
-            controller: _myEmailController,
+            controller: _myCompController,
             decoration: InputDecoration(
-                hintText: "Enter your email",
-                hintStyle:TextStyle(color: Colors.grey),
+                hintText: des,
+                hintStyle:TextStyle(color: Colors.black),
                 border: InputBorder.none
             ),
           ),
@@ -40,9 +42,9 @@ class InputField extends StatelessWidget {
           ),
           child: TextField(
             obscureText: true,
-            controller: _myPwdController,
+            controller: _myNameController,
             decoration: InputDecoration(
-                hintText: "Enter your password",
+                hintText: "Enter your name",
                 hintStyle:TextStyle(color: Colors.grey),
                 border: InputBorder.none
             ),
@@ -58,17 +60,9 @@ class InputField extends StatelessWidget {
           ),
           child: TextButton(
             onPressed: () async {
-              if(await adminOperations.searchAdminByEmailMdp(_myEmailController.text,_myPwdController.text)==true){
-                Navigator.push(
-                  context,MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              }else{
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("invalid credentials !")));
-              }
             },
             child: Text(
-              'Login',
+              'Add',
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),

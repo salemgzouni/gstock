@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:gstock/Pages/RegisterPage.dart';
+import 'package:gstock/Pages/home_page.dart';
 
 import 'InputField.dart';
 
@@ -22,17 +23,13 @@ class InputWrapper extends StatelessWidget {
           ),
           SizedBox(height: 40,),
 
-          Text(
-              "You don't have an account ?",
-              style: TextStyle(color: Colors.black45)
-          ),
           InkWell(
             child: ElevatedButton(
-              child: const Text('Wanna create an account ?'),
+              child: const Text('Annuler '),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const RegisterPage()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                 );
               },
             ),
