@@ -2,9 +2,10 @@
 // TODO Implement this library.
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/famille_operation.dart';
+import 'package:gstock/Models/composant.dart';
 import 'package:gstock/Models/famille.dart';
-import 'package:gstock/Pages/Composant.dart';
 import 'package:gstock/Pages/FormFamille.dart';
+import 'ComposantPage.dart';
 import 'home_page.dart';
 import 'ProfilePage.dart';
 import '';
@@ -63,11 +64,11 @@ class _HomePageState extends State<HomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Composant(),
+                                        builder: (context) => ComposantPage(),
                                         // Pass the arguments as part of the RouteSettings. The
                                         // DetailScreen reads the arguments from these settings.
                                         settings: RouteSettings(
-                                          arguments: familleList[index].id,
+                                          arguments: familleList[index].des,
                                         ),
                                       ),
                                     );

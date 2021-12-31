@@ -33,15 +33,15 @@ class ComposantOperations {
   Future<List<Composant>> searchComposantById(String id) async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db
-        .query('composant', where: 'id=?', whereArgs: ['%id%']);
+        .query('composant', where: 'id=?', whereArgs: [id]);
     List<Composant> composant =allRows.map((composant) => Composant.map(composant)).toList();
     return composant;
   }
   Future<List<Composant>> searchComposantByFamille(String fam) async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db
-        .query('composant', where: 'famille_comp=?', whereArgs: ['%fam%']);
-    List<Composant> composant =allRows.map((composant) => Composant.map(composant)).toList();
+        .query('composant', where: 'famille_comp=?', whereArgs: [fam]);
+    List<Composant> composant =await allRows.map((composant) => Composant.map(composant)).toList();
     return composant;
   }
 }

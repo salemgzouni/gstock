@@ -59,7 +59,7 @@ class InputField extends StatelessWidget {
             onPressed: () async {
               if(await adminOperations.searchAdminByEmailMdp(_myEmailController.text,_myPwdController.text)==true){
                 Navigator.push(
-                  context,MaterialPageRoute(builder: (context) => ProfilePage()),
+                  context,MaterialPageRoute(builder: (context) => HomePage()),
                 );
               }else{
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(

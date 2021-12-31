@@ -47,7 +47,6 @@ class _ComposantPageState extends State<ComposantPage> {
                     // DetailScreen reads the arguments from these settings.
                     settings: RouteSettings(
                       arguments:des,
-
                     ),
                   ),
                 );
@@ -80,9 +79,6 @@ class _ComposantPageState extends State<ComposantPage> {
                                       ),
                                     ),
                                   );
-                                  Scaffold.of(context).showSnackBar(SnackBar(
-                                    content: Text(composantList[index].des+ ' pressed!'),
-                                  ));
                                 },
                                 title: Text(composantList[index].des),
                                 subtitle: Text(composantList[index].description),
