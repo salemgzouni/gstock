@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gstock/components/LoginComponents/Header.dart';
-import 'package:gstock/components/LoginComponents/InputWrapper.dart';
+import 'package:gstock/components/RegisterComponents/Header.dart';
+import 'package:gstock/components/RegisterComponents/InputWrapper.dart';
 import '';
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,11 @@ class LoginPage extends StatelessWidget {
             Header(),
             Expanded(child: Container(
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(60),
-                  topRight: Radius.circular(60),
-                )
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(60),
+                    topRight: Radius.circular(60),
+                  )
               ),
               child: InputWrapper(),
             ))

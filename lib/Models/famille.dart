@@ -1,42 +1,55 @@
 import 'package:gstock/Models/composant.dart';
 
 class Famille{
-  late String _id;
-  late String _des;
-  late String _description;
+  late int id;
+  late String des;
+  late String description;
 
-  Famille(this._id, this._des, this._description);
 
-  String get description => _description;
+  Famille(this.des, this.description);
 
-  String get des => _des;
-
-  String get id => _id;
+  late List<Composant> listComposants;
 
 
 
+  List<Composant> get _listComposants => listComposants;
 
-  set description(String value) {
-    _description = value;
+
+  String get _description => description;
+
+  String get _des => des;
+
+  int get _id => id;
+
+
+  set _listComposants(List<Composant> value) {
+    listComposants = value;
   }
 
-  set des(String value) {
-    _des = value;
+
+  set _description(String value) {
+    description = value;
   }
-  //convert composant Object to Map Object
+
+  set _des(String value) {
+    des = value;
+  }
+  //convert famille Object to Map Object
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
-    if(id!=null){
-      map["id"] = _id;
-    }
     map["des"] = _des;
     map["description"] = _description;
+
     return map;
   }
+
   //extract composant object from Map Object
   Famille.map(dynamic obj) {
-    this._id = obj['id'];
-    this._des = obj['des'];
-    this._description = obj['description'];
+
+    this.des = obj['des'];
+    this.description = obj['description'];
+
   }
+
+
 }

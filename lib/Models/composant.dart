@@ -1,13 +1,15 @@
 class Composant{
-  late String _id;
+  late int _id;
   late String _des;
   late String _description;
   late int _qte;
-  late int _famille_comp;
 
-  Composant(this._id, this._des, this._description, this._qte,this._famille_comp);
+  late String _famille_comp;
 
-  int get famille_comp => _famille_comp;
+  Composant(this._des, this._description, this._qte, this._famille_comp);
+
+  String get famille_comp => _famille_comp;
+
 
   int get qte => _qte;
 
@@ -15,9 +17,9 @@ class Composant{
 
   String get des => _des;
 
-  String get id => _id;
+  int get id => _id;
 
-  set famille_comp(int value) {
+  set famille_comp(String value) {
     _famille_comp = value;
   }
 
@@ -35,13 +37,10 @@ class Composant{
   //convert composant Object to Map Object
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();
-    if(id!=null){
-      map["id"] = _id;
-    }
     map["des"] = _des;
     map["description"] = _description;
     map["qte"] = _qte;
-    map["famille_comp"]=_famille_comp;
+    map["famille_comp"] = _famille_comp;
     return map;
   }
   //extract composant object from Map Object
@@ -50,6 +49,6 @@ class Composant{
     this._des = obj['des'];
     this._description = obj['description'];
     this._qte = obj['qte'];
-    this._famille_comp= obj['famille_comp'];
+    this._famille_comp=obj['famille_comp'];
   }
 }

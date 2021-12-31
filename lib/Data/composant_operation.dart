@@ -1,7 +1,7 @@
 import 'package:gstock/Data/database_helper.dart';
 import 'package:gstock/Models/composant.dart';
-class FamilleOperations {
-  late FamilleOperations adminOperations;
+class ComposantOperations {
+  late ComposantOperations adminOperations;
 
   final dbProvider = DataBaseHelper.DataBaseHelperinstance;
 
@@ -14,12 +14,17 @@ class FamilleOperations {
   updateComposant(Composant composant) async {
     final db = await dbProvider.database;
     db.update('composant', composant.toMap(),
-        where: "id=?", whereArgs: [composant.id]);
+        where: "des=?", whereArgs: [composant.des]);
+  }
+  updateQtiteComposant(String des, int myQte) async {
+    final db = await dbProvider.database;
+    await db.rawUpdate('UPDATE composant SET qte=qte-? WHERE des=?',[myQte,des]
+    );
   }
 
-  deleteComposant(Composant composant) async {
+  deleteComposant(String des) async {
     final db = await dbProvider.database;
-    await db.delete('composant', where: 'id=?', whereArgs: [composant.id]);
+    await db.delete('composant', where: 'des=?', whereArgs: [des]);
   }
 
   Future <List<Composant>> getAllComposants() async {
@@ -30,20 +35,29 @@ class FamilleOperations {
     return composants;
   }
 
-  Future<List<Composant>> searchComposantById(String id) async {
+  Future<List<Composant>> searchComposantById(int id) async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db
-        .query('composant', where: 'id=?', whereArgs: ['%id%']);
+        .query('composant', where: 'id=?', whereArgs: [id]);
     List<Composant> composant =allRows.map((composant) => Composant.map(composant)).toList();
     return composant;
   }
   Future<List<Composant>> searchComposantByFamille(String fam) async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db
-        .query('composant', where: 'famille_comp=?', whereArgs: ['%fam%']);
+        .query('composant', where: 'famille_comp=?', whereArgs: [fam]);
+    List<Composant> composant =await allRows.map((composant) => Composant.map(composant)).toList();
+    return composant;
+  }
+
+  Future<List<Composant>> searchComposantByDes(String des) async {
+    final db = await dbProvider.database;
+    List<Map<String, dynamic>> allRows = await db
+        .query('composant', where: 'des=?', whereArgs: [des]);
     List<Composant> composant =allRows.map((composant) => Composant.map(composant)).toList();
     return composant;
   }
+
 }
 
 //WHERE name LIKE 'keyword%'

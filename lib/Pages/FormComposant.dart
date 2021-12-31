@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:gstock/components/LoginComponents/Header.dart';
-import 'package:gstock/components/LoginComponents/InputWrapper.dart';
+
+import 'package:gstock/components/FormComposant/InputWrapper.dart';
+import 'package:gstock/components/FormComposant/Header.dart';
+
 import '';
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class FormComposant extends StatelessWidget {
+  const FormComposant({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -23,11 +26,11 @@ class LoginPage extends StatelessWidget {
             Header(),
             Expanded(child: Container(
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(60),
-                  topRight: Radius.circular(60),
-                )
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(60),
+                    topRight: Radius.circular(60),
+                  )
               ),
               child: InputWrapper(),
             ))

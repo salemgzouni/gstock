@@ -9,12 +9,17 @@ class DataBaseHelper{
   DataBaseHelper._privateConstructor();
   static final DataBaseHelperinstance = DataBaseHelper._privateConstructor();
   static Database? _database;
-  final _databaseName='gStock';
+
+  final _databaseName='gStockDB';
+
   Future<Database> get database async =>_database??=await _initDatabase();
 
   Future<Database> _initDatabase() async{
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
+
     String path = join(documentsDirectory.path,_databaseName);
+
+
     return await openDatabase(
       path,
       version: 1,
@@ -24,7 +29,7 @@ class DataBaseHelper{
   Future _onCreate(Database db,int version) async{
     await db.execute('''
       CREATE TABLE admin(
-        id TEXT PRIMARY KEY,
+        id integer PRIMARY KEY autoincrement,
         nom TEXT,
         prenom TEXT,
         email TEXT,
@@ -33,20 +38,30 @@ class DataBaseHelper{
      ''');
     await db.execute('''
       CREATE TABLE famille(
-        id TEXT PRIMARY KEY,
+        id integer PRIMARY KEY autoincrement,
         des TEXT,
-        description TEXT,
+        description TEXT
       )
      ''');
     await db.execute('''
       CREATE TABLE composant(
-        id TEXT PRIMARY KEY,
+        id integer PRIMARY KEY autoincrement,
         des TEXT,
         description TEXT,
         qte INTEGER,
-        famille_comp,
-        FOREIGN KEY(famille_comp) REFERENCES famille(id)
+        famille_comp TEXT,
+        FOREIGN KEY(famille_comp) REFERENCES famille(des)
       )
      ''');
+    await db.execute('''
+      CREATE TABLE emprunt(
+        id integer PRIMARY KEY autoincrement,
+        comp TEXT,
+        nom TEXT,
+        dateDebut TEXT,
+        dateFin TEXT
+      )
+     ''');
+
   }
 }

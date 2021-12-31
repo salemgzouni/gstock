@@ -1,7 +1,10 @@
 import 'package:gstock/Data/database_helper.dart';
 import 'package:gstock/Models/famille.dart';
+
+
+
 class FamilleOperations {
-  late FamilleOperations adminOperations;
+  late FamilleOperations familleOperations;
 
   final dbProvider = DataBaseHelper.DataBaseHelperinstance;
 
@@ -22,11 +25,10 @@ class FamilleOperations {
     await db.delete('famille', where: 'id=?', whereArgs: [famille.id]);
   }
 
-  Future <List<Famille>> getAllFamills() async {
+  Future<List<Famille>> getAllFamilles() async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db.query('famille');
-    List<Famille> familles =
-    allRows.map((familles) => Famille.map(familles)).toList();
+    List<Famille> familles = allRows.map((familles) => Famille.map(familles)).toList();
     return familles;
   }
 
@@ -37,7 +39,19 @@ class FamilleOperations {
     List<Famille> famille =allRows.map((famille) => Famille.map(famille)).toList();
     return famille;
   }
+
+  Future<List<Famille>> searchFamilleByDes(String des) async {
+    final db = await dbProvider.database;
+    List<Map<String, dynamic>> allRows = await db
+        .query('famille', where: 'des=?', whereArgs: ['%des%']);
+    List<Famille> famille =allRows.map((famille) => Famille.map(famille)).toList();
+    return famille;
+  }
+
+
 }
+
+
 
 //WHERE name LIKE 'keyword%'
 //--Finds any values that start with "keyword"
