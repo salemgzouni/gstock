@@ -48,6 +48,16 @@ class DetailComposant extends StatelessWidget {
 
                               child: Column(
                                 children: <Widget>[
+
+                                   TextField(
+
+                                    decoration: InputDecoration(
+                                        hintText: "Nom du famille",
+                                        hintStyle: TextStyle(
+                                            color: Colors.black),
+                                        border: InputBorder.none
+                                    ),
+                                  ),
                                   Container(
                                     padding: EdgeInsets.all(18),
                                     decoration: BoxDecoration(
@@ -64,6 +74,16 @@ class DetailComposant extends StatelessWidget {
                                               color: Colors.grey),
                                           border: InputBorder.none
                                       ),
+                                    ),
+                                  ),
+
+                                  TextField(
+
+                                    decoration: InputDecoration(
+                                        hintText: "Designation du composant",
+                                        hintStyle: TextStyle(
+                                            color: Colors.black),
+                                        border: InputBorder.none
                                     ),
                                   ),
                                   Container(
@@ -83,6 +103,16 @@ class DetailComposant extends StatelessWidget {
                                               color: Colors.grey),
                                           border: InputBorder.none
                                       ),
+                                    ),
+                                  ),
+
+                                  TextField(
+
+                                    decoration: InputDecoration(
+                                        hintText: "Description du composant",
+                                        hintStyle: TextStyle(
+                                            color: Colors.black),
+                                        border: InputBorder.none
                                     ),
                                   ),
                                   Container(
@@ -105,6 +135,16 @@ class DetailComposant extends StatelessWidget {
                                       ),
                                     ),
                                   ),
+
+                                  TextField(
+
+                                    decoration: InputDecoration(
+                                        hintText: "Quantite du composant",
+                                        hintStyle: TextStyle(
+                                            color: Colors.black),
+                                        border: InputBorder.none
+                                    ),
+                                  ),
                                   Container(
                                     padding: EdgeInsets.all(18),
                                     decoration: BoxDecoration(
@@ -120,6 +160,57 @@ class DetailComposant extends StatelessWidget {
                                           hintStyle: TextStyle(
                                               color: Colors.grey),
                                           border: InputBorder.none
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Container(
+                                    height: 40,
+                                    margin: EdgeInsets.symmetric(horizontal: 50),
+                                    decoration: BoxDecoration(
+                                      color: Colors.cyan[500],
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                      },
+                                      child: Text(
+                                        'Modifier',
+                                        style: TextStyle(color: Colors.white, fontSize: 20),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Container(
+                                    height: 40,
+                                    margin: EdgeInsets.symmetric(horizontal: 50),
+                                    decoration: BoxDecoration(
+                                      color: Colors.cyan[500],
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                      },
+                                      child: Text(
+                                        'Supprimer',
+                                        style: TextStyle(color: Colors.white, fontSize: 20),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Container(
+                                    height: 40,
+                                    margin: EdgeInsets.symmetric(horizontal: 50),
+                                    decoration: BoxDecoration(
+                                      color: Colors.cyan[500],
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                      },
+                                      child: Text(
+                                        'Ajout emprunt',
+                                        style: TextStyle(color: Colors.white, fontSize: 20),
                                       ),
                                     ),
                                   ),
