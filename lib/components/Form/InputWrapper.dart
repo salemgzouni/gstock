@@ -25,7 +25,7 @@ class InputWrapper extends StatelessWidget {
           Container(
             child: InkWell(
               child: ElevatedButton(
-                child: const Text('Retour home ?'),
+                child: const Text('Annuler'),
                 onPressed: () {
                   Navigator.push(
                     context,

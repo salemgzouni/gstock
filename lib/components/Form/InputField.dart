@@ -5,6 +5,7 @@ import 'package:gstock/Models/Admin.dart';
 import 'package:gstock/Models/famille.dart';
 import 'package:gstock/Pages/LoginPage.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gstock/Pages/home_page.dart';
 
 
 class InputField extends StatelessWidget {
@@ -65,7 +66,7 @@ FamilleOperations familleOperations= FamilleOperations();
               final famille=Famille(
                   _myNameController.text, _myDescriptionController.text);
               familleOperations.createFamille(famille);
-
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
             },
             child: Text(
               'Add',
