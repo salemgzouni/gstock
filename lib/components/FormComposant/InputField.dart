@@ -7,6 +7,7 @@ import 'package:gstock/Models/famille.dart';
 import 'package:gstock/Pages/ComposantPage.dart';
 import 'package:gstock/Pages/LoginPage.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gstock/Pages/home_page.dart';
 
 
 class InputField extends StatelessWidget {
@@ -89,7 +90,7 @@ class InputField extends StatelessWidget {
               final composant=Composant(
                    _myNameController.text, _myDescriptionController.text, n, des);
               composantOperations.createCompsant(composant);
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ComposantPage()),);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
             },
             child: Text(
               'Add',
