@@ -17,9 +17,9 @@ class ComposantOperations {
         where: "des=?", whereArgs: [composant.des]);
   }
 
-  deleteComposant(Composant composant) async {
+  deleteComposant(String des) async {
     final db = await dbProvider.database;
-    await db.delete('composant', where: 'id=?', whereArgs: [composant.id]);
+    await db.delete('composant', where: 'des=?', whereArgs: [des]);
   }
 
   Future <List<Composant>> getAllComposants() async {
