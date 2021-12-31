@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/composant_operation.dart';
 import 'package:gstock/Models/composant.dart';
+
+
+
 import '';
 import 'home_page.dart';
 class DetailComposant extends StatelessWidget {

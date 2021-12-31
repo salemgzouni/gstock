@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/admin_operations.dart';
-import 'package:gstock/Models/Admin.dart';
-
 import '';
 import 'home_page.dart';
 class ProfilePage extends StatelessWidget {
