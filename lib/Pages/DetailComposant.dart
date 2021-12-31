@@ -189,7 +189,11 @@ class DetailComposant extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: TextButton(
-                                      onPressed: () {
+                                      onPressed: () async {
+                                        await composantOperations.deleteComposant(des);
+                                        Navigator.push(
+                                          context,MaterialPageRoute(builder: (context) => HomePage()),
+                                        );
                                       },
                                       child: Text(
                                         'Supprimer',
