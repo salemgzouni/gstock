@@ -30,7 +30,7 @@ class ComposantOperations {
     return composants;
   }
 
-  Future<List<Composant>> searchComposantById(String id) async {
+  Future<List<Composant>> searchComposantById(int id) async {
     final db = await dbProvider.database;
     List<Map<String, dynamic>> allRows = await db
         .query('composant', where: 'id=?', whereArgs: [id]);
@@ -44,6 +44,15 @@ class ComposantOperations {
     List<Composant> composant =await allRows.map((composant) => Composant.map(composant)).toList();
     return composant;
   }
+
+  Future<List<Composant>> searchComposantByDes(String des) async {
+    final db = await dbProvider.database;
+    List<Map<String, dynamic>> allRows = await db
+        .query('composant', where: 'des=?', whereArgs: [des]);
+    List<Composant> composant =allRows.map((composant) => Composant.map(composant)).toList();
+    return composant;
+  }
+
 }
 
 //WHERE name LIKE 'keyword%'
