@@ -11,6 +11,7 @@ class InputField extends StatelessWidget {
 
   final _myCompController = TextEditingController();
   final _myNameController = TextEditingController();
+  final _myQteController = TextEditingController();
   EmpruntOperations empruntOperations = new EmpruntOperations();
 
 
@@ -52,6 +53,23 @@ class InputField extends StatelessWidget {
             controller: _myNameController,
             decoration: InputDecoration(
                 hintText: "Enter your name",
+                hintStyle:TextStyle(color: Colors.grey),
+                border: InputBorder.none
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(18),
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(color: Colors.grey)
+              )
+          ),
+          child: TextField(
+            obscureText: false,
+            controller: _myQteController,
+            decoration: InputDecoration(
+                hintText: "Enter the quantity",
                 hintStyle:TextStyle(color: Colors.grey),
                 border: InputBorder.none
             ),
