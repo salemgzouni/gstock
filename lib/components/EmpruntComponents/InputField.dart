@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/admin_operations.dart';
+import 'package:gstock/Data/emprunt_operations.dart';
 import 'package:gstock/Models/Admin.dart';
+import 'package:gstock/Models/Emprunt.dart';
 import 'package:gstock/Pages/ProfilePage.dart';
 import 'package:gstock/Pages/home_page.dart';
+import 'package:intl/intl.dart';
 
 class InputField extends StatelessWidget {
 
   final _myCompController = TextEditingController();
   final _myNameController = TextEditingController();
+  EmpruntOperations empruntOperations = new EmpruntOperations();
 
 
 
@@ -15,6 +19,8 @@ class InputField extends StatelessWidget {
   Widget build(BuildContext context) {
     final des= ModalRoute.of(context)!.settings.arguments as String;
     print(des);
+    final DateFormat formatter = DateFormat('MM/dd/yyyy');
+    String todayDate = formatter.format(DateTime.now());
     return Column(
       children: <Widget>[
         Container(
@@ -41,7 +47,7 @@ class InputField extends StatelessWidget {
               )
           ),
           child: TextField(
-            obscureText: true,
+            obscureText: false,
             controller: _myNameController,
             decoration: InputDecoration(
                 hintText: "Enter your name",
@@ -60,6 +66,9 @@ class InputField extends StatelessWidget {
           ),
           child: TextButton(
             onPressed: () async {
+                Emprunt emprunt= Emprunt(_myCompController.text, _myNameController.text, todayDate.toString(),"");
+                empruntOperations.creatEmprunt(emprunt);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
             },
             child: Text(
               'Add',

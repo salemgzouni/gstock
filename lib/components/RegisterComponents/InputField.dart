@@ -96,7 +96,9 @@ AdminOperations adminOperations=AdminOperations();
     ),
          child: TextButton(
            onPressed: () {
-
+              Admin admin = Admin(_myNameController.text,_myPrenomController.text, _myEmailController.text, _myPwdController.text);
+              adminOperations.createAdmin(admin);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()),);
            },
            child: Text(
              'Register',

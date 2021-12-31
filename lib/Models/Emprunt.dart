@@ -2,10 +2,10 @@ class Emprunt{
   late int _id;
   late String _comp;
   late String _nom;
-  late DateTime _dateDebut;
-  late DateTime _dateFin;
+  late String _dateDebut;
+  late String _dateFin;
 
-  Emprunt(this._comp, this._nom, this._dateDebut);
+  Emprunt(this._comp, this._nom, this._dateDebut,this._dateFin);
 
   int get id => _id; //convert composant Object to Map Object
   Map<String, dynamic> toMap() {
@@ -28,19 +28,12 @@ class Emprunt{
 
   String get comp => _comp;
 
-  DateTime get dateFin => _dateFin;
 
-  DateTime get dateDebut => _dateDebut;
 
   String get nom => _nom;
 
-  set dateFin(DateTime value) {
-    _dateFin = value;
-  }
 
-  set dateDebut(DateTime value) {
-    _dateDebut = value;
-  }
+  String get dateDebut => _dateDebut;
 
   set nom(String value) {
     _nom = value;
@@ -48,5 +41,15 @@ class Emprunt{
 
   set comp(String value) {
     _comp = value;
+  }
+
+  set dateDebut(String value) {
+    _dateDebut = value;
+  }
+
+  String get dateFin => _dateFin;
+
+  set dateFin(String value) {
+    _dateFin = value;
   }
 }

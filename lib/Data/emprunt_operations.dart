@@ -8,7 +8,7 @@ class EmpruntOperations {
   creatEmprunt(Emprunt emprunt) async {
     final db = await dbProvider.database;
     db.insert('emprunt', emprunt.toMap());
-    print('empruntt inserted');
+    print('emprunt inserted');
   }
 
   updateEmprunt(Emprunt emprunt) async {
