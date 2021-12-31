@@ -6,6 +6,7 @@ import 'package:gstock/Models/composant.dart';
 import 'package:gstock/Models/famille.dart';
 import 'package:gstock/Pages/FormFamille.dart';
 import 'ComposantPage.dart';
+import 'LoginPage.dart';
 import 'home_page.dart';
 import 'ProfilePage.dart';
 import '';
@@ -35,18 +36,18 @@ class _HomePageState extends State<HomePage> {
             title: Text('Les familles'),
             leading : IconButton(
               icon: Icon (
-                Icons.arrow_back,
+                Icons.logout,
                 color: Colors.white,
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()),);
               },
             ),
             actions:[
               IconButton(onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => FormFamille()),);
                 },
-                  icon: Icon(Icons.settings, color: Colors.white))
+                  icon: Icon(Icons.add, color: Colors.white))
             ]
         ),
         body: Container(

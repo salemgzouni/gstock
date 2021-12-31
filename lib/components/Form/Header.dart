@@ -10,11 +10,7 @@ class Header extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Center(
-            child: Text("Ajouter une famille",style: TextStyle(color: Colors.white,fontSize:40),),
-          ),
-          SizedBox(height: 10,),
-          Center(
-            child: Text("Welcome to GStock",style: TextStyle(color: Colors.white,fontSize: 18),),
+            child: Text("Ajouter une Famille",style: TextStyle(color: Colors.white,fontSize: 18),),
           )
         ],
       ),

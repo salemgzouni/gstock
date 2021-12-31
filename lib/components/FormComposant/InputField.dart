@@ -39,6 +39,7 @@ class InputField extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 20,),
         Container(
           padding: EdgeInsets.all(18),
           decoration: BoxDecoration(
