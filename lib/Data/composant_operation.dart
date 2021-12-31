@@ -16,6 +16,11 @@ class ComposantOperations {
     db.update('composant', composant.toMap(),
         where: "des=?", whereArgs: [composant.des]);
   }
+  updateQtiteComposant(String des, int myQte) async {
+    final db = await dbProvider.database;
+    await db.rawUpdate('UPDATE composant SET qte=qte-? WHERE des=?',[myQte,des]
+    );
+  }
 
   deleteComposant(String des) async {
     final db = await dbProvider.database;

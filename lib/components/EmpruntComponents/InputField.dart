@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gstock/Data/admin_operations.dart';
+import 'package:gstock/Data/composant_operation.dart';
 import 'package:gstock/Data/emprunt_operations.dart';
 import 'package:gstock/Models/Admin.dart';
 import 'package:gstock/Models/Emprunt.dart';
+import 'package:gstock/Models/composant.dart';
 import 'package:gstock/Pages/ProfilePage.dart';
 import 'package:gstock/Pages/home_page.dart';
 import 'package:intl/intl.dart';
@@ -13,7 +15,7 @@ class InputField extends StatelessWidget {
   final _myNameController = TextEditingController();
   final _myQteController = TextEditingController();
   EmpruntOperations empruntOperations = new EmpruntOperations();
-
+  ComposantOperations composantOperations= new ComposantOperations();
 
 
   @override
@@ -86,8 +88,11 @@ class InputField extends StatelessWidget {
           child: TextButton(
             onPressed: () async {
                 Emprunt emprunt= Emprunt(des, _myNameController.text, todayDate.toString(),"");
-                empruntOperations.creatEmprunt(emprunt);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
+                //Composant comp= Composant.map(composantOperations.searchComposantByDes(des));
+                int myQte= int.parse(_myQteController.text);
+                  empruntOperations.creatEmprunt(emprunt);
+                  composantOperations.updateQtiteComposant(des, myQte);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
             },
             child: Text(
               'Add',
