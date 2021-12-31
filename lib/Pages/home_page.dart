@@ -5,6 +5,7 @@ import 'package:gstock/Data/famille_operation.dart';
 import 'package:gstock/Models/composant.dart';
 import 'package:gstock/Models/famille.dart';
 import 'package:gstock/Pages/FormFamille.dart';
+import 'package:gstock/Pages/liste_emprunt.dart';
 import 'ComposantPage.dart';
 import 'LoginPage.dart';
 import 'home_page.dart';
@@ -42,12 +43,19 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()),);
               },
+
             ),
             actions:[
               IconButton(onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => FormFamille()),);
-                }, icon: Icon(Icons.add, color: Colors.white))
+                }, icon: Icon(Icons.add, color: Colors.white)),
+
+              IconButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => listeemprunt()),);
+              }, icon: Icon(Icons.settings, color: Colors.white))
+
             ]
+
         ),
         body: Container(
             child: FutureBuilder(

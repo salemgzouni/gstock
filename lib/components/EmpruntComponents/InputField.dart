@@ -31,6 +31,7 @@ class InputField extends StatelessWidget {
               )
           ),
           child: TextField(
+            readOnly: true,
             controller: _myCompController,
             decoration: InputDecoration(
                 hintText: des,
@@ -66,7 +67,7 @@ class InputField extends StatelessWidget {
           ),
           child: TextButton(
             onPressed: () async {
-                Emprunt emprunt= Emprunt(_myCompController.text, _myNameController.text, todayDate.toString(),"");
+                Emprunt emprunt= Emprunt(des, _myNameController.text, todayDate.toString(),"");
                 empruntOperations.creatEmprunt(emprunt);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
             },

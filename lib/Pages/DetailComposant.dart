@@ -73,11 +73,12 @@ class DetailComposant extends StatelessWidget {
                                         )
                                     ),
                                     child: TextField(
+                                      readOnly: true,
                                       controller: _myFamController,
                                       decoration: InputDecoration(
                                           hintText: composantList[index].famille_comp,
                                           hintStyle: TextStyle(
-                                              color: Colors.grey),
+                                              color: Colors.black),
                                           border: InputBorder.none
                                       ),
                                     ),
@@ -101,11 +102,12 @@ class DetailComposant extends StatelessWidget {
                                         )
                                     ),
                                     child: TextField(
+                                      readOnly: true,
                                       controller: _myDesController,
                                       decoration: InputDecoration(
                                           hintText: composantList[index].des,
                                           hintStyle: TextStyle(
-                                              color: Colors.grey),
+                                              color: Colors.black),
                                           border: InputBorder.none
                                       ),
                                     ),
