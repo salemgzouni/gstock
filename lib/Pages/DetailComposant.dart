@@ -12,6 +12,11 @@ class DetailComposant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _myDesController = TextEditingController();
+    final _myDescriptionController = TextEditingController();
+    final _myQteController = TextEditingController();
+    final _myFamController = TextEditingController();
+
     ComposantOperations composantOperations = ComposantOperations();
     final des= ModalRoute.of(context)!.settings.arguments as String;
     print(des);
@@ -68,7 +73,7 @@ class DetailComposant extends StatelessWidget {
                                         )
                                     ),
                                     child: TextField(
-
+                                      controller: _myFamController,
                                       decoration: InputDecoration(
                                           hintText: composantList[index].famille_comp,
                                           hintStyle: TextStyle(
@@ -96,9 +101,8 @@ class DetailComposant extends StatelessWidget {
                                         )
                                     ),
                                     child: TextField(
-
+                                      controller: _myDesController,
                                       decoration: InputDecoration(
-
                                           hintText: composantList[index].des,
                                           hintStyle: TextStyle(
                                               color: Colors.grey),
@@ -126,7 +130,7 @@ class DetailComposant extends StatelessWidget {
                                     ),
 
                                     child: TextField(
-
+                                      controller: _myDescriptionController,
                                       decoration: InputDecoration(
 
                                           hintText: composantList[index].description,
@@ -155,7 +159,7 @@ class DetailComposant extends StatelessWidget {
                                         )
                                     ),
                                     child: TextField(
-
+                                      controller: _myQteController,
                                       decoration: InputDecoration(
                                           hintText: composantList[index].qte.toString(),
                                           hintStyle: TextStyle(
@@ -174,6 +178,11 @@ class DetailComposant extends StatelessWidget {
                                     ),
                                     child: TextButton(
                                       onPressed: () {
+                                        int n = int.parse(_myQteController.text);
+                                        final composant=Composant(
+                                          composantList[index].des, _myDescriptionController.text, n,  composantList[index].famille_comp,);
+                                        composantOperations.updateComposant(composant);
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
                                       },
                                       child: Text(
                                         'Modifier',

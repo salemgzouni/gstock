@@ -14,7 +14,7 @@ class ComposantOperations {
   updateComposant(Composant composant) async {
     final db = await dbProvider.database;
     db.update('composant', composant.toMap(),
-        where: "id=?", whereArgs: [composant.id]);
+        where: "des=?", whereArgs: [composant.des]);
   }
 
   deleteComposant(String des) async {
