@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gstock/Data/composant_operation.dart';
 import 'package:gstock/Models/composant.dart';
 
-import 'package:gstock/components/DetailCom/InputWrapper.dart';
-import 'package:gstock/components/DetailCom/Header.dart';
+
 
 import '';
 import 'home_page.dart';
