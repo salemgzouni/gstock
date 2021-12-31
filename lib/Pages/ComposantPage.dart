@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gstock/Data/composant_operation.dart';
 import 'package:gstock/Data/famille_operation.dart';
 import 'package:gstock/Models/composant.dart';
+import 'package:gstock/Pages/DetailComposant.dart';
 import 'package:gstock/Pages/FormComposant.dart';
 import 'home_page.dart';
 import 'ProfilePage.dart';
@@ -69,11 +70,11 @@ class _ComposantPageState extends State<ComposantPage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => FormComposant(),
+                                      builder: (context) => DetailComposant(),
                                       // Pass the arguments as part of the RouteSettings. The
                                       // DetailScreen reads the arguments from these settings.
                                       settings: RouteSettings(
-                                        arguments: des,
+                                        arguments: composantList[index].des,
 
                                       ),
                                     ),

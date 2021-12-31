@@ -45,9 +45,10 @@ class Composant{
   }
   //extract composant object from Map Object
   Composant.map(dynamic obj) {
+    this._id = obj['id'];
     this._des = obj['des'];
     this._description = obj['description'];
     this._qte = obj['qte'];
-
+    this._famille_comp=obj['famille_comp'];
   }
 }
