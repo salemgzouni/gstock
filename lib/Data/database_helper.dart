@@ -10,7 +10,7 @@ class DataBaseHelper{
   static final DataBaseHelperinstance = DataBaseHelper._privateConstructor();
   static Database? _database;
 
-  final _databaseName='gStock';
+  final _databaseName='gStock2';
 
   Future<Database> get database async =>_database??=await _initDatabase();
 
@@ -50,7 +50,7 @@ class DataBaseHelper{
         description TEXT,
         qte INTEGER,
         famille_comp,
-        FOREIGN KEY(famille_comp) REFERENCES famille(id)
+        FOREIGN KEY(famille_comp) REFERENCES famille(des)
       )
      ''');
     await db.execute('''
