@@ -4,6 +4,7 @@ import 'package:gstock/Data/composant_operation.dart';
 import 'package:gstock/Models/Admin.dart';
 import 'package:gstock/Models/composant.dart';
 import 'package:gstock/Models/famille.dart';
+import 'package:gstock/Pages/ComposantPage.dart';
 import 'package:gstock/Pages/LoginPage.dart';
 import 'package:flutter/foundation.dart';
 
@@ -39,6 +40,7 @@ class InputField extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 20,),
         Container(
           padding: EdgeInsets.all(18),
           decoration: BoxDecoration(
@@ -73,6 +75,7 @@ class InputField extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 20,),
         Container(
           height: 40,
           margin: EdgeInsets.symmetric(horizontal: 50),
@@ -86,7 +89,7 @@ class InputField extends StatelessWidget {
               final composant=Composant(
                    _myNameController.text, _myDescriptionController.text, n, des);
               composantOperations.createCompsant(composant);
-
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ComposantPage()),);
             },
             child: Text(
               'Add',

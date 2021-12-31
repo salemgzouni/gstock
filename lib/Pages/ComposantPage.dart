@@ -51,9 +51,8 @@ class _ComposantPageState extends State<ComposantPage> {
                     ),
                   ),
                 );
-
               },
-                  icon: Icon(Icons.settings, color: Colors.white))
+                  icon: Icon(Icons.add, color: Colors.white))
             ]
         ),
         body: Container(

@@ -87,7 +87,8 @@ AdminOperations adminOperations=AdminOperations();
             ),
           ),
         ),
-       Container(
+        SizedBox(height: 20,),
+        Container(
     height: 40,
     margin: EdgeInsets.symmetric(horizontal: 50),
     decoration: BoxDecoration(

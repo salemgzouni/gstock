@@ -48,6 +48,7 @@ class InputField extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 20,),
         Container(
           height: 40,
           margin: EdgeInsets.symmetric(horizontal: 50),

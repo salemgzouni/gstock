@@ -21,18 +21,21 @@ class InputWrapper extends StatelessWidget {
             ),
             child: InputField(),
           ),
-          SizedBox(height: 5,),
-          InkWell(
-            child: ElevatedButton(
-              child: const Text('Retour home ?'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
+          SizedBox(height: 20,),
+          Container(
+            child: InkWell(
+              child: ElevatedButton(
+                child: const Text('Annuler'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+              ),
             ),
           ),
+
           SizedBox(height: 5,),
         ],
       ),

@@ -9,12 +9,9 @@ class Header extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Center(
-            child: Text("Ajouter un composant",style: TextStyle(color: Colors.white,fontSize:40),),
-          ),
           SizedBox(height: 10,),
           Center(
-            child: Text("Welcome to GStock",style: TextStyle(color: Colors.white,fontSize: 18),),
+            child: Text("Ajouter un composant",style: TextStyle(color: Colors.white,fontSize: 18),),
           )
         ],
       ),
