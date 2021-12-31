@@ -80,7 +80,6 @@ AdminOperations adminOperations=AdminOperations();
             controller: _myPwdController,
             obscureText: true,
             decoration: InputDecoration(
-
                 hintText: "Enter your password",
                 hintStyle:TextStyle(color: Colors.grey),
                 border: InputBorder.none
@@ -97,8 +96,6 @@ AdminOperations adminOperations=AdminOperations();
     ),
          child: TextButton(
            onPressed: () {
-              final admin=Admin(_myNameController.text, _myPrenomController.text, _myEmailController.text,_myPwdController.text);
-              adminOperations.createAdmin(admin);
 
            },
            child: Text(

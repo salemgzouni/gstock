@@ -5,6 +5,7 @@ import 'package:gstock/Models/composant.dart';
 
 
 import '';
+import 'add_emprunt_page.dart';
 import 'home_page.dart';
 class DetailComposant extends StatelessWidget {
   const DetailComposant({Key? key}) : super(key: key);
@@ -211,6 +212,12 @@ class DetailComposant extends StatelessWidget {
                                     ),
                                     child: TextButton(
                                       onPressed: () {
+                                        Navigator.push(
+                                          context,MaterialPageRoute(builder: (context) => EmpruntPage(),
+                                          settings: RouteSettings(
+                                            arguments:des,
+                                          ),
+                                        ));
                                       },
                                       child: Text(
                                         'Ajout emprunt',
